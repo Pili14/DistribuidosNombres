@@ -1,0 +1,24 @@
+{
+    "persons": [
+        {
+            "nombre": "Maria",
+            "apellido": "Gomez",
+            "genero": "Mujer"
+        },
+        {
+            "nombre": "Marlon",
+            "apellido": "Rivera",
+            "genero": "Hombre"
+        },
+        {
+            "nombre": "Sergio",
+            "apellido": "Valcarcel",
+            "genero": "Hombre"
+        },
+        {
+            "nombre": "Nicolas",
+            "apellido": "Avella",
+            "genero": "Hombre"
+        }
+    ]
+}
