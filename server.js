@@ -4,7 +4,7 @@ const server = express()
 
 server.get("/random_name", (req, res) => {
   let person = getRandomPerson()
-  res.send({"author" : "Pilar", "nombre" : person.nombre, "genero" : person.genero})
+  res.send({"author" : "Pilar Gomez", "nombre" : person.nombre, "genero" : person.genero})
 })
 
 server.listen(3000, () => {
@@ -12,7 +12,7 @@ server.listen(3000, () => {
 })
 
 function getRandomPerson(){
-  let persons = JSON.parse(fs.readFileSync("./persons.txt", "utf-8"))
+  let persons = JSON.parse(fs.readFileSync("./data/persons.txt", "utf-8"))
   persons = persons.persons
   let random = Math.floor(Math.random() * (persons.length))
   return persons[random]
@@ -20,5 +20,5 @@ function getRandomPerson(){
 
 server.get("/random_lastname", (req, res) => {
   let person = getRandomPerson()
-  res.send({"author" : "Pilar", "apellido" : person.apellido, "genero" : person.genero})
+  res.send({"author" : "Pilar Gomez", "apellido" : person.apellido, "genero" : person.genero})
 })
