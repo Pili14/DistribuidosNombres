@@ -4,7 +4,9 @@ const server = express()
 
 server.get("/random_name", (req, res) => {
   let person = getRandomPerson()
-  res.send({"author" : "Pilar Gomez", "nombre" : person.nombre, "genero" : person.genero})
+  setTimeout(()=>{
+    res.send({"author" : "Pilar Gomez", "nombre" : person.nombre, "genero" : person.genero, host : req.hostname})
+  }, 10000)
 })
 
 server.listen(3000, () => {
@@ -20,5 +22,7 @@ function getRandomPerson(){
 
 server.get("/random_lastname", (req, res) => {
   let person = getRandomPerson()
-  res.send({"author" : "Pilar Gomez", "apellido" : person.apellido, "genero" : person.genero})
+  setTimeout(() => {
+    res.send({"author" : "Pilar Gomez", "apellido" : person.apellido, "genero" : person.genero})
+  }, 10000)
 })
