@@ -3,11 +3,17 @@ const fs = require("fs");
 const server = express();
 
 server.get("/random_name", (req, res) => {
-  let person = getRandomPerson()
-  setTimeout(() => {
-    res.send({"author" : "Pilar Gomez", "nombre" : person.nombre, "genero" : person.genero, "host" : req.hostname})
-  }, 10000)
-})
+  let person = getRandomPerson();
+  for (let i = 0; i < 100000000; i++) {
+    console.log(i);
+  }
+  res.send({
+    author: "Pilar Gomez",
+    nombre: person.nombre,
+    genero: person.genero,
+    host: req.hostname,
+  });
+});
 
 server.listen(3000, () => {
   console.log("Servidor activo en el puerto 3000");
@@ -21,8 +27,14 @@ function getRandomPerson() {
 }
 
 server.get("/random_lastname", (req, res) => {
-  let person = getRandomPerson()
-  setTimeout(() => {
-    res.send({"author" : "Pilar Gomez", "apellido" : person.apellido, "genero" : person.genero, "host" : req.headers})
-  }, 10000)
-})
+  let person = getRandomPerson();
+  for (let i = 0; i < 100000000; i++) {
+    console.log(i);
+  }
+  res.send({
+    author: "Pilar Gomez",
+    apellido: person.apellido,
+    genero: person.genero,
+    host: req.headers,
+  });
+});
